@@ -5,9 +5,9 @@ ThemeData chatterAppThemeData() {
     colorScheme: ColorScheme(
       brightness: Brightness.light,
       primary: Colors.pink,
-      onPrimary: Colors.amber.shade100,
+      onPrimary: Colors.white,
       secondary: Colors.pink,
-      onSecondary: Colors.amber.shade100,
+      onSecondary: Colors.white,
       error: Colors.red,
       onError: Colors.red.shade900,
       background: Colors.white,
