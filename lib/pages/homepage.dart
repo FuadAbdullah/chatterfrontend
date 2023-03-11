@@ -89,14 +89,78 @@ Expanded expandedChatView() {
     child: Padding(
       padding: const EdgeInsets.all(20),
       child: SingleChildScrollView(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
-          Placeholder(),
-          Placeholder(),
-          Placeholder(),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            rightChatContainer(),
+            leftChatContainer(),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Padding leftChatContainer() {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: LayoutBuilder(
+      builder: (
+        BuildContext ctx,
+        BoxConstraints constraints,
+      ) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: constraints.maxWidth / 5,
+                maxWidth: constraints.maxWidth / 1.2,
+                minHeight: 100,
+                maxHeight: 500,
+              ),
+              child: Container(
+                color: Colors.blue,
+                height: 100,
+                width: 2000,
+              ),
+            ),
+          ],
+        );
+      },
+    ),
+  );
+}
+
+Padding rightChatContainer() {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: LayoutBuilder(
+      builder: (
+        BuildContext ctx,
+        BoxConstraints constraints,
+      ) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: constraints.maxWidth / 5,
+                maxWidth: constraints.maxWidth / 1.2,
+                minHeight: 100,
+                maxHeight: 500,
+              ),
+              child: Container(
+                color: Colors.blue,
+                height: 100,
+                width: 2000,
+              ),
+            ),
+          ],
+        );
+      },
     ),
   );
 }
